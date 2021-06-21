@@ -19,9 +19,7 @@
     </thead>
     <tbody>
       <!-- Write the line of EJS to iterate over movies using forEach -->
-      <% flights.forEach(f => { %>
-       
-      <% }) %>
+      <% flights.forEach(function(f) { %>
         <tr>
           <td><%= f.airline %></td>
           <td><%= f.airport %></td>
@@ -29,6 +27,7 @@
           <td><%= f.departs %></td>
         </tr>
       <!-- Close the forEach using EJS here -->
+      <% }) %>
     </tbody>
   </table>
 </body>

@@ -1,9 +1,9 @@
 const Flight = require('../models/flight')
 
 module.exports = {
+    index,
     new:newFlight,
-    create:create.apply,
-    index
+    create
 }
 
 function newFlight(reg,res){
@@ -11,11 +11,8 @@ function newFlight(reg,res){
 }
 
 function index(req,res){
-    Flight.find({}, function(err, allFlightDocuments){
-        console.log(allFlightDocuments)
-        res.render('flights/index', {
-            flights: allFlightDocuments
-        });
+    Flight.find({}, function(err, flights){
+        res.render('flights/index', {flights});
     });
 }
 // function create(req,res){
